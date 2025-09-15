@@ -5,9 +5,7 @@ import json
 try:
     API_KEY = os.environ["GEMINI_API_KEY"]
 except KeyError:
-    # Fallback for demonstration/testing if env var isn't set.
-    # For production, NEVER hardcode.
-    API_KEY = "AIzaSyDeNmt-xztq84GxUp9qQfFrcsyDfMVKNd0" # <--- REPLACE WITH YOUR ACTUAL API KEY
+    API_KEY = "INSERT GEMINI API KEY" # <--- REPLACE WITH YOUR ACTUAL API KEY
 
 genai.configure(api_key=API_KEY)
 
@@ -100,4 +98,5 @@ def analyze_single_ingredient_to_json(ingredient_name: str) -> str:
         return json.dumps({"error": f"Failed to parse JSON response from AI: {e}", "raw_response": response.text})
     except Exception as e:
         return json.dumps({"error": f"An error occurred during single ingredient analysis: {str(e)}"})
+
 
