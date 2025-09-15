@@ -128,7 +128,7 @@ with app.app_context():
 try:
     API_KEY = os.environ["GEMINI_API_KEY"]
 except KeyError:
-    API_KEY = "AIzaSyDeNmt-xztq84GxUp9qQfFrcsyDfMVKNd0" 
+    API_KEY = "INSERT GEMINI API KEY" 
     print("WARNING: GEMINI_API_KEY environment variable not found. Using hardcoded key (NOT for production).")
 
 genai.configure(api_key=API_KEY)
@@ -1291,4 +1291,5 @@ def signup_verify_otp():
 
 
 if __name__ == '__main__':
+
     app.run(host='0.0.0.0', port=5000, debug=True)
